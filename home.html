@@ -25,9 +25,10 @@
 		        </ul>
 		        <ul class="nav navbar-nav navbar-center">
 		         	<li id="search" class="text-left">
-		         		<form class="navbar-form" id="search" role="search">
+		         		<form class="navbar-form" id="search" role="search" action="display.php" method="post">
 	                    	<div class="form-group">
-	                     	   <input type="text" class="form-control" placeholder="Search...">
+	                     	   <input type="text" name="filter" class="form-control" placeholder="Search...">
+	                     	   <input type="submit">
 	                    	</div>
 	            		</form>
 	            	</li>
@@ -50,31 +51,35 @@
 		  			</ol>
 					<div class="carousel-inner" role="listbox">
 				    	<div class="item active">
-				     	 	<a href="mens.html"><img id="mc" src="mensclothes.jpg" class="img-responsive car-center" alt="mcloth"></a>
-				     	 	<!-- href will be to php page that queries for mens clothes only -->
+				     	 	<img src="mensclothes.jpg" class="img-responsive car-center" alt="mclothes">
 				     	 	<div class="carousel-caption">
-		      				  <h3>Men's Clothes</h3>
+				     	 	  <form action="display.php" method="post">
+				     	 		<input class="inp-center" type="submit" name="filter" value="mens clothes">
+		      				  </form>
 		    				</div>
 				    	</div>
 				   		<div class="item">
-				      		<a href=""><img id="ma" src="mensaccessories.jpg" class="img-responsive car-center" alt="macces"></a>
-				      		<!-- href will be to php page that queries for mens accessories only -->
+				      		<img src="mensaccessories.jpg" class="img-responsive car-center" alt="macces">
 				      		<div class="carousel-caption">
-		      				  <h3>Men's Accessories</h3>
+		      				  <form action="display.php" method="post">
+				     	 			<input class="inp-center" type="submit" name="filter" value="mens accessories">
+		      				  </form>
 		    				</div>
 				   		</div>
 				    	<div class="item">
-				      		<a href=""><img id="wc" src="womensclothes.jpg" class="img-responsive car-center" alt="wcloth"></a>
-				      		<!-- href will be php page that queries for womens clothes only -->
+				      		<img src="womensclothes.jpg" class="img-responsive car-center" alt="wcloth">
 				      		<div class="carousel-caption">
-		      				  <h3>Women's Clothes</h3>
+		      				  <form action="display.php" method="post">
+				     	 			<input class="inp-center" type="submit" name="filter" value="womens clothes">
+		      				  </form>
 		    				</div>
 				  		</div>
 				   		<div class="item">
-				      		<a href=""><img id="wa" src="womensaccessories.jpg" class="img-responsive car-center" alt="wacces"></a>
-				      		<!-- href will be php page that queries for womens accessories only  -->
+				      		<img src="womensaccessories.jpg" class="img-responsive car-center" alt="wacces">
 				      		<div class="carousel-caption">
-		      				  <h3>Women's Accessories</h3>
+		      				  <form action="display.php" method="post">
+				     	 			<input class="inp-center" type="submit" name="filter" value="womens accessories">
+		      				  </form>
 		    				</div>
 				   		</div>	
 				  	</div>
@@ -142,6 +147,7 @@
     		margin-right: auto;
 		  }
 		  input.inp-center{
+		  	color: #000000;
 		  	display: block;
     		margin-left: auto;
     		margin-right: auto;
