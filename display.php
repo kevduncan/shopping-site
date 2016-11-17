@@ -28,7 +28,7 @@ echo "
                     <li id=\"search\" class=\"text-left\">
                        <form class=\"navbar-form\" id=\"search\" role=\"search\" action=\"display.php\" method=\"post\">
                         <div class=\"form-group\">
-                           <input type=\"text\" name=\"filter\" class=\"form-control\" placeholder=\"Search...\">
+                           <input type=\"text\" name=\"filter2\" class=\"form-control\" placeholder=\"Search...\">
                            <input type=\"submit\">
                         </div>
                   </form>
@@ -53,7 +53,7 @@ echo "
                 <input class=\"inp-center text-muted\" type=\"text\" placeholder=\"username\">
                 <br>
                 <h3 class=\"text-center text-info\">PASSWORD</h3>
-                <input class=\"inp-center text-muted\" type=\"text\" placeholder=\"password\">
+                <input class=\"inp-center text-muted\" type=\"password\" placeholder=\"password\">
                 <br>
                 <button class=\"center text-primary\" type=\"submit\" onclick=\"\">SUBMIT</button>
               </div>
@@ -67,7 +67,6 @@ $servername = "localhost";
 $username = "root";
 $password = "root";
 $dbname = "shopping_db";
-$counter = 0;
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -169,7 +168,11 @@ if ($details1->num_rows > 0) {
                 </tr>
       ";
     }
+} else {
+  echo "<br><br><br>No results found for \"" . $filter2 . "\"";
 }
+
+
 
 echo "        
         </tbody>

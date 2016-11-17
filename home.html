@@ -104,14 +104,15 @@
 				        <h4 class="modal-title text-center">LOGIN</h4>
 				      </div>
 				      <div class="modal-body">
-				      	<h3 class="text-center text-info">USERNAME</h3>
-				        <input class="inp-center text-muted" type="text" placeholder="username">
-				        <br>
-				        <h3 class="text-center text-info">PASSWORD</h3>
-				        <input class="inp-center text-muted" type="text" placeholder="password">
-				        <br>
-				        <button class="center text-primary" type="submit" onclick="">SUBMIT</button>
-				        <!-- need to compare input for user and pass to user database table -->
+				      	<form action="login.php" method="post">
+					      	<h3 class="text-center text-info">USERNAME</h3>
+					        	<input name="usern" class="inp-center text-muted" type="text" placeholder="username">
+					        <br>
+					        <h3 class="text-center text-info">PASSWORD</h3>
+					       	 	<input name="passwd" class="inp-center text-muted" type="password" placeholder="password">
+					        <br>
+				       	 	<button class="center text-primary" type="submit">SUBMIT</button>
+				        </form>
 				        <br><br>
 				      </div>
 				    </div>
