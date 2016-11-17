@@ -95,8 +95,8 @@ $details = $conn->query($sql);
         <table class=\"table\">
           <thead>
             <tr>
-              <th>#</th>
-              <th></th>
+              <th>Item#</th>
+              <th>Image</th>
               <th>Product Name</th>
               <th>Description</th>
               <th>Price</th>
@@ -109,14 +109,19 @@ $details = $conn->query($sql);
     while($row = $details->fetch_assoc()) {
         echo "
                 <tr>
-                  <td>" . $row.["item_id"] . "</td>
+                  <td>" . $row["item_id"] . "</td>
                   <td>
-                    <img src=\"" . $row.["item_id"] . ".jpg\"/>
+                    <img src=\"" . $row["item_id"] . ".jpg\"/>
                   </td>
-                  <td>" . $row.["item_name"] . "</td>
-                  <td>" . $row.["item_desc"] . "</td>
-                  <td>" . $row.["item_price"] . "</td>
-                  <td><select><option value=\"0\">0</option></select></td>
+                  <td>" . $row["item_name"] . "</td>
+                  <td>" . $row["item_desc"] . "</td>
+                  <td>$" . $row["item_price"] . "</td>
+                  <td><select>
+                        <option value=\"0\">0</option>
+                        <option value=\"1\">1</option>
+                        <option value=\"2\">2</option>
+                     </select>
+                  </td>
                 </tr>
       ";
     }
@@ -127,6 +132,9 @@ echo "
         </tbody>
       </table>
   </div>
+  <footer>
+      <p>&copy;NanoZon 2016 -- Kevin, Hector, Maneesh</p>
+    </footer>
   </div>
   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
     <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\" integrity=\"sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa\" crossorigin=\"anonymous\"></script>
@@ -161,6 +169,15 @@ echo "
         display: block;
         margin-left: auto;
         margin-right: auto;
+      }
+      footer {
+       position: fixed;
+       right: 0;
+       bottom: 0;
+       left: 0;
+       padding: 1rem;
+       background-color: #efefef;
+       text-align: center;
       }
 
   </style>
