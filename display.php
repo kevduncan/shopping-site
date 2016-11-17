@@ -82,10 +82,14 @@ $filter = $_POST["filter"];
   //       </div>
   // ";
 
-$sql = "SELECT * FROM shopping_db.products WHERE item_cat = \"$filter\";";
-$details = $conn->query($sql);
-        
+$sql1 = "SELECT * FROM shopping_db.products WHERE item_cat = \"$filter\";";
+$details1 = $conn->query($sql1);
 
+$filter2 = $_POST["filter2"];
+$sql2 = "SELECT * FROM shopping_db.products WHERE item_name LIKE \"%$filter2%\";";
+$details2 = $conn->query($sql2);
+        
+if ($details1->num_rows > 0) {
     echo "
       <div style=\"padding-top: 20px;\" class=\"page-header\">
         <h1>". $filter . "</h1>
@@ -106,7 +110,7 @@ $details = $conn->query($sql);
           <tbody>
     ";
 
-    while($row = $details->fetch_assoc()) {
+    while($row = $details1->fetch_assoc()) {
         echo "
                 <tr>
                   <td>" . $row["item_id"] . "</td>
@@ -125,15 +129,54 @@ $details = $conn->query($sql);
                 </tr>
       ";
     }
+} else if ($details2->num_rows > 0){
+      echo "
+      <div style=\"padding-top: 20px;\" class=\"page-header\">
+        <h1>". $filter2 . "</h1>
+      </div>
+      <div class=\"row\">
+      <div class=\"col-md-8\">
+        <table class=\"table\">
+          <thead>
+            <tr>
+              <th>Item#</th>
+              <th>Image</th>
+              <th>Product Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Qty</th>
+            </tr>
+          </thead>
+          <tbody>
+    ";
 
-
+    while($row = $details2->fetch_assoc()) {
+        echo "
+                <tr>
+                  <td>" . $row["item_id"] . "</td>
+                  <td>
+                    <img src=\"" . $row["item_id"] . ".jpg\"/>
+                  </td>
+                  <td>" . $row["item_name"] . "</td>
+                  <td>" . $row["item_desc"] . "</td>
+                  <td>$" . $row["item_price"] . "</td>
+                  <td><select>
+                        <option value=\"0\">0</option>
+                        <option value=\"1\">1</option>
+                        <option value=\"2\">2</option>
+                     </select>
+                  </td>
+                </tr>
+      ";
+    }
+}
 
 echo "        
         </tbody>
       </table>
   </div>
   <footer>
-      <p>&copy;NanoZon 2016 -- Kevin, Hector, Maneesh</p>
+      <p style=\"color: #9d9d9d;\">&copy;NanoZon 2016 -- Kevin, Hector, Maneesh</p>
     </footer>
   </div>
   <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
@@ -176,7 +219,7 @@ echo "
        bottom: 0;
        left: 0;
        padding: 1rem;
-       background-color: #efefef;
+       background-color: #3c3c3c;
        text-align: center;
       }
 
