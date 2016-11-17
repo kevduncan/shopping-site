@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<title>Nanozon</title>
+		<link rel="shortcut icon" href="favicon.ico">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	</head>
+
+	<body>
+		<div id="wholePage" class="container-fluid">
+
+			<!-- NAVBAR -->
+			<nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
+				<div class="container-fluid">
+		            <div class="navbar-header">
+		                <a class="navbar-brand">Nanozon</a>
+		            </div>
+
+		        <ul class="nav navbar-nav navbar-left">
+		         	<li id="home"><a href="home.html">Home</a></li> 
+		        </ul>
+		        <ul class="nav navbar-nav navbar-center">
+		         	<li id="search" class="text-left">
+		         		<form class="navbar-form" id="search" role="search">
+	                    	<div class="form-group">
+	                     	   <input type="text" class="form-control" placeholder="Search...">
+	                    	</div>
+	            		</form>
+	            	</li>
+		        </ul>
+		        <ul class="nav navbar-nav navbar-right">
+		        	<li id="login" class="pop"><a href="#">Login</a></li> <!--login.php as href-->
+		        	<li id="cart"><a href="cart.php"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+		        </ul>
+		      </div>
+		    </nav> <!-- END NAV -->
+
+		    <!-- CAROUSEL -->
+			<div id="carouselContainer" class="jumbotron">
+				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					    <li data-target="#myCarousel" data-slide-to="1"></li>
+					    <li data-target="#myCarousel" data-slide-to="2"></li>
+					    <li data-target="#myCarousel" data-slide-to="3"></li>
+		  			</ol>
+					<div class="carousel-inner" role="listbox">
+				    	<div class="item active">
+				     	 	<a href="mens.html"><img id="mc" src="mensclothes.jpg" class="img-responsive car-center" alt="mcloth"></a>
+				     	 	<!-- href will be to php page that queries for mens clothes only -->
+				     	 	<div class="carousel-caption">
+		      				  <h3>Men's Clothes</h3>
+		    				</div>
+				    	</div>
+				   		<div class="item">
+				      		<a href=""><img id="ma" src="mensaccessories.jpg" class="img-responsive car-center" alt="macces"></a>
+				      		<!-- href will be to php page that queries for mens accessories only -->
+				      		<div class="carousel-caption">
+		      				  <h3>Men's Accessories</h3>
+		    				</div>
+				   		</div>
+				    	<div class="item">
+				      		<a href=""><img id="wc" src="womensclothes.jpg" class="img-responsive car-center" alt="wcloth"></a>
+				      		<!-- href will be php page that queries for womens clothes only -->
+				      		<div class="carousel-caption">
+		      				  <h3>Women's Clothes</h3>
+		    				</div>
+				  		</div>
+				   		<div class="item">
+				      		<a href=""><img id="wa" src="womensaccessories.jpg" class="img-responsive car-center" alt="wacces"></a>
+				      		<!-- href will be php page that queries for womens accessories only  -->
+				      		<div class="carousel-caption">
+		      				  <h3>Women's Accessories</h3>
+		    				</div>
+				   		</div>	
+				  	</div>
+				  	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+					   	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					    <span class="sr-only">Previous</span>
+					</a>
+					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					    <span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div> <!-- END CAROUSEL DIV -->
+		
+			<!-- LOGIN MODAL -->
+			<div id="loginContainer" class="container-fluid">
+				<div class="modal fade bs-modal-lg" id="myModal" tabindex="-1" role="dialog">
+				  <div class="modal-dialog" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				        <h4 class="modal-title text-center">LOGIN</h4>
+				      </div>
+				      <div class="modal-body">
+				      	<h3 class="text-center text-info">USERNAME</h3>
+				        <input class="inp-center text-muted" type="text" placeholder="username">
+				        <br>
+				        <h3 class="text-center text-info">PASSWORD</h3>
+				        <input class="inp-center text-muted" type="text" placeholder="password">
+				        <br>
+				        <button class="center text-primary" type="submit" onclick="">SUBMIT</button>
+				        <!-- need to compare input for user and pass to user database table -->
+				        <br><br>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			</div> <!-- END MODAL DIV -->
+
+		</div> <!-- END OF ENTIRE PAGE DIV -->
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+
+
+	<script type="text/javascript">
+		$(function() {
+			$('.pop').on('click', function() {
+				$('#myModal').modal('show');  
+			});		
+		});
+	</script>
+
+
+	<style>
+		  body {
+		      position: relative;
+		      height: 100%;
+		  }
+		  img.car-center{
+		  	padding-top:75px;
+		  	display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+		  }
+		  input.inp-center{
+		  	display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+		  }
+		  .center{
+		  	display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+		  }
+
+ 	</style>
+
+</html>
