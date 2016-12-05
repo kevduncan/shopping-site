@@ -8,13 +8,14 @@
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="
+		sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<!-- my CSS file -->
 		<link rel="stylesheet" type="text/css" href="styles.css">
-
 	</head>
 
 	<body>
-		<!-- <div id="wholePage" class="container-fluid"> -->
+		<div id="wholePage" class="container-fluid">
 
 			<!-- NAVBAR -->
 			<nav class="navbar navbar-inverse navbar-fixed-top" id="topnav">
@@ -37,7 +38,6 @@
 	            	</li>
 		        </ul>
 		        <ul class="nav navbar-nav navbar-right">
-		        <!-- TRY TO USE SESSION TO SET VARIABLE FOR USERS ID, THEN USE THAT ID FOR THE CART SO THAT EACH USER HAS OWN CART -->
 		        	<?php
 						if(isset($_SESSION['user'])) {
   							  echo '<li><a href="#">Welcome ' . $_SESSION['user'] . '!</a></li>';
@@ -46,7 +46,7 @@
 						    echo '<li id="login" class="pop"><a href="#">Login</a></li>';
 						}
 					?>
-					
+					<!-- <li id=\"login\" class=\"pop\"><a href=\"#\">Login</a></li> -->
 		        	<li id="cart" style="padding-top: 7px; padding-right:7px;"> 
 		        	<form action="viewCart.php">
 		        		<button type="submit" class="btn btn-default">
@@ -57,60 +57,6 @@
 		        </ul>
 		      </div>
 		    </nav> <!-- END NAV -->
-
-		    <!-- CAROUSEL -->
-			<div id="carouselContainer">
-				<div id="myCarousel" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-					    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					    <li data-target="#myCarousel" data-slide-to="1"></li>
-					    <li data-target="#myCarousel" data-slide-to="2"></li>
-					    <li data-target="#myCarousel" data-slide-to="3"></li>
-		  			</ol>
-					<div class="carousel-inner" role="listbox">
-				    	<div class="item active">
-				     	 	<img src="mensclothes.jpg" class="img-responsive car-center" alt="mclothes">
-				     	 	<div class="carousel-caption">
-				     	 	  <form action="display.php" method="post">
-				     	 		<input class="inp-center" type="submit" name="filter" value="mens clothes">
-		      				  </form>
-		    				</div>
-				    	</div>
-				   		<div class="item">
-				      		<img src="mensaccessories.jpg" class="img-responsive car-center" alt="macces">
-				      		<div class="carousel-caption">
-		      				  <form action="display.php" method="post">
-				     	 			<input class="inp-center" type="submit" name="filter" value="mens accessories">
-		      				  </form>
-		    				</div>
-				   		</div>
-				    	<div class="item">
-				      		<img src="womensclothes.jpg" class="img-responsive car-center" alt="wcloth">
-				      		<div class="carousel-caption">
-		      				  <form action="display.php" method="post">
-				     	 			<input class="inp-center" type="submit" name="filter" value="womens clothes">
-		      				  </form>
-		    				</div>
-				  		</div>
-				   		<div class="item">
-				      		<img src="womensaccessories.jpg" class="img-responsive car-center" alt="wacces">
-				      		<div class="carousel-caption">
-		      				  <form action="display.php" method="post">
-				     	 			<input class="inp-center" type="submit" name="filter" value="womens accessories">
-		      				  </form>
-		    				</div>
-				   		</div>	
-				  	</div>
-				  	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-					   	<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-					    <span class="sr-only">Previous</span>
-					</a>
-					<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-					    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-					    <span class="sr-only">Next</span>
-					</a>
-				</div>
-			</div> <!-- END CAROUSEL DIV -->
 		
 			<!-- LOGIN MODAL -->
 			<div id="loginContainer" class="container-fluid">
@@ -122,12 +68,12 @@
 				        <h4 class="modal-title text-center">LOGIN</h4>
 				      </div>
 				      <div class="modal-body">
-				      	<form name="loginForm" action="login.php" onsubmit="return validateForm()" method="post">
+				      	<form action="login.php" method="post">
 					      	<h3 class="text-center text-info">USERNAME</h3>
-					        	<input name="usern" class="inp-center text-muted" type="text" placeholder="username" required>
+					        	<input name="usern" class="inp-center text-muted" type="text" placeholder="username">
 					        <br>
 					        <h3 class="text-center text-info">PASSWORD</h3>
-					       	 	<input name="passwd" class="inp-center text-muted" type="password" placeholder="password" required> 
+					       	 	<input name="passwd" class="inp-center text-muted" type="password" placeholder="password">
 					        <br>
 				       	 	<button class="center text-primary" type="submit">SUBMIT</button>
 				        </form>
@@ -140,7 +86,7 @@
 		<footer>
 			<p style="color: #9d9d9d;">&copy;NanoZon 2016 -- Kevin, Hector, Maneesh</p>
 		</footer>
-		<!-- </div> END OF ENTIRE PAGE DIV -->
+		</div> <!-- END OF ENTIRE PAGE DIV -->
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

@@ -1,0 +1,30 @@
+html, body {
+ 	width: 100%;
+ 	height: 100%;
+}
+footer {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #3c3c3c;
+	text-align: center;
+}
+img.car-center{
+	padding-top:75px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+input.inp-center{
+	color: #000000;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
